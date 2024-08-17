@@ -12,7 +12,16 @@ function App() {
   );
 
   function Pizza() {
-    return <h2>Pizza</h2>;
+    return (
+      <ul>
+        {pizzaData.map((pizza) => (
+          <div>
+            <h2>{pizza.name}</h2>
+            <p>{pizza.ingredients}</p>
+          </div>
+        ))}
+      </ul>
+    );
   }
 }
 
