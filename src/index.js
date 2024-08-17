@@ -16,6 +16,10 @@ function App() {
       <ul>
         {pizzaData.map((pizza) => (
           <div>
+            <img
+              src={pizza.photoName}
+              alt={pizza.name}
+            />
             <h2>{pizza.name}</h2>
             <p>{pizza.ingredients}</p>
           </div>
