@@ -5,7 +5,7 @@ import './index.css';
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -19,15 +19,19 @@ function App() {
       textTransform: 'uppercase',
     };
 
-    return <h1 style={headerStyle}>Fast React Pizza Co.</h1>;
+    return (
+      <header className="header">
+        <h1 style={{}}>Fast React Pizza Co.</h1>
+      </header>
+    );
   }
 
   function Menu() {
     return (
-      <div>
+      <main className="menu">
         <h2>Our Menu</h2>
         <Pizza />
-      </div>
+      </main>
     );
   }
 
@@ -38,7 +42,9 @@ function App() {
     const isOpen = hour >= openHour && hour <= closeHour;
 
     return (
-      <footer>{new Date().toLocaleTimeString()} - We're currently open</footer>
+      <footer className="footer">
+        {new Date().toLocaleTimeString()} - We're currently open
+      </footer>
     );
   }
 
@@ -51,7 +57,7 @@ function App() {
               src={pizza.photoName}
               alt={pizza.name}
             />
-            <h2>{pizza.name}</h2>
+            <h3>{pizza.name}</h3>
             <p>{pizza.ingredients}</p>
           </div>
         ))}
