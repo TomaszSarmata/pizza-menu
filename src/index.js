@@ -13,7 +13,13 @@ function App() {
   );
 
   function Header() {
-    return <h1>Fast React Pizza Co.</h1>;
+    const headerStyle = {
+      color: 'red',
+      fontSize: '48px',
+      textTransform: 'uppercase',
+    };
+
+    return <h1 style={headerStyle}>Fast React Pizza Co.</h1>;
   }
 
   function Menu() {
