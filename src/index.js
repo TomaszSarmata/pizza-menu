@@ -50,15 +50,19 @@ function App() {
 
   function Pizza() {
     return (
-      <ul>
+      <ul className="pizzas">
         {pizzaData.map((pizza) => (
-          <div>
+          <div className="pizza">
             <img
               src={pizza.photoName}
               alt={pizza.name}
             />
-            <h3>{pizza.name}</h3>
-            <p>{pizza.ingredients}</p>
+            <div>
+              {' '}
+              <h3>{pizza.name}</h3>
+              <p>{pizza.ingredients}</p>
+              <span>£{pizza.price}</span>
+            </div>
           </div>
         ))}
       </ul>
