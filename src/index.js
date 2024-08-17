@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
 import pizzaData from './data';
+import './index.css';
 
 function App() {
   return (
