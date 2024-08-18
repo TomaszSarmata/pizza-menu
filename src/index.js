@@ -52,7 +52,9 @@ function App() {
     return (
       <ul className="pizzas">
         {pizzaData.map((pizza) => (
-          <div className="pizza">
+          <div
+            className="pizza"
+            key={pizza.name}>
             <img
               src={pizza.photoName}
               alt={pizza.name}
