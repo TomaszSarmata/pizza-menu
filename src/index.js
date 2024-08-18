@@ -21,10 +21,14 @@ function App() {
   }
 
   function Menu() {
+    const pizzas = pizzaData;
+    // const pizzas = [];
+    const pizzaNum = pizzas.length;
+
     return (
       <main className="menu">
         <h2>Our Menu</h2>
-        <Pizza />
+        {pizzaNum > 0 && <Pizza />}
       </main>
     );
   }
