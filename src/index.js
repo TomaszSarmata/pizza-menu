@@ -46,6 +46,14 @@ function App() {
     const closeHour = 22;
     const isOpen = hour >= openHour && hour <= closeHour;
 
+    if (!isOpen)
+      return (
+        <p>
+          We are happy to welcome you between the {openHour}:00am and {''}
+          {closeHour}:00pm
+        </p>
+      );
+
     return (
       <footer className="footer">
         {isOpen ? (
