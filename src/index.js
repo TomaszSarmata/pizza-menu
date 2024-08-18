@@ -13,12 +13,6 @@ function App() {
   );
 
   function Header() {
-    const headerStyle = {
-      color: 'red',
-      fontSize: '48px',
-      textTransform: 'uppercase',
-    };
-
     return (
       <header className="header">
         <h1 style={{}}>Fast React Pizza Co.</h1>
@@ -37,13 +31,14 @@ function App() {
 
   function Footer() {
     const hour = new Date().getHours();
-    const openHour = 12;
+    const openHour = 10;
     const closeHour = 22;
     const isOpen = hour >= openHour && hour <= closeHour;
 
     return (
       <footer className="footer">
-        {new Date().toLocaleTimeString()} - We're currently open
+        {new Date().toLocaleTimeString()}
+        {isOpen ? " - We're currently open" : " - We're currently closed"}
       </footer>
     );
   }
