@@ -28,7 +28,14 @@ function App() {
     return (
       <main className="menu">
         <h2>Our Menu</h2>
-        {pizzaNum > 0 && <Pizza />}
+        {pizzaNum > 0 ? (
+          <Pizza />
+        ) : (
+          <p>
+            There are currently no pizzas to order. We apologise about the
+            inconvenience!
+          </p>
+        )}
       </main>
     );
   }
