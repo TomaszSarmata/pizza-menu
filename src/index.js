@@ -30,14 +30,14 @@ function App() {
         <h2>Our Menu</h2>
 
         {pizzaNum > 0 ? (
-          <>
+          <React.Fragment key="anythingHere">
             {' '}
             <p>
               Authentic Italian cuisine. 6 Creative dishes to choose from. All
               from our stone oven, all organic. all delicious
             </p>
             <Pizza />
-          </>
+          </React.Fragment>
         ) : (
           <p>
             There are currently no pizzas to order. We apologise about the
