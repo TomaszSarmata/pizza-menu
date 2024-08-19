@@ -90,24 +90,22 @@ function App() {
   function Pizza() {
     return (
       <ul className="pizzas">
-        {pizzaData.map((pizza) =>
-          pizza.soldOut ? null : (
-            <div
-              className="pizza"
-              key={pizza.name}>
-              <img
-                src={pizza.photoName}
-                alt={pizza.name}
-              />
-              <div>
-                {' '}
-                <h3>{pizza.name}</h3>
-                <p>{pizza.ingredients}</p>
-                <span>£{pizza.price}</span>
-              </div>
+        {pizzaData.map((pizza) => (
+          <li
+            className={`pizza ${pizza.soldOut ? 'sold-out' : ''}`}
+            key={pizza.name}>
+            <img
+              src={pizza.photoName}
+              alt={pizza.name}
+            />
+            <div>
+              {' '}
+              <h3>{pizza.name}</h3>
+              <p>{pizza.ingredients}</p>
+              <span>{pizza.soldOut ? 'SOLD OUT' : `£${pizza.price}`}</span>
             </div>
-          )
-        )}
+          </li>
+        ))}
       </ul>
     );
   }
