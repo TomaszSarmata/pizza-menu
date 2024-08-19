@@ -46,24 +46,18 @@ function App() {
     const closeHour = 22;
     const isOpen = hour >= openHour && hour <= closeHour;
 
-    if (!isOpen)
-      return (
-        <p>
-          We are happy to welcome you between the {openHour}:00am and {''}
-          {closeHour}:00pm
-        </p>
-      );
+    // if (!isOpen)
+    //   return (
+    //     <p>
+    //       We are happy to welcome you between the {openHour}:00am and {''}
+    //       {closeHour}:00pm
+    //     </p>
+    //   );
 
     return (
       <footer className="footer">
         {isOpen ? (
-          <div class="order">
-            <p>
-              We're open until {closeHour}:00. Come and visit us or order
-              online.
-            </p>
-            <button className="btn">Order</button>
-          </div>
+          <Order closeHour={closeHour}></Order>
         ) : (
           <p>
             We are happy to welcome you between the {openHour}:00am and {''}
@@ -74,25 +68,38 @@ function App() {
     );
   }
 
+  function Order({ closeHour }) {
+    return (
+      <div class="order">
+        <p>
+          We're open until {closeHour}:00. Come and visit us or order online.
+        </p>
+        <button className="btn">Order</button>
+      </div>
+    );
+  }
+
   function Pizza() {
     return (
       <ul className="pizzas">
-        {pizzaData.map((pizza) => (
-          <div
-            className="pizza"
-            key={pizza.name}>
-            <img
-              src={pizza.photoName}
-              alt={pizza.name}
-            />
-            <div>
-              {' '}
-              <h3>{pizza.name}</h3>
-              <p>{pizza.ingredients}</p>
-              <span>£{pizza.price}</span>
+        {pizzaData.map((pizza) =>
+          pizza.soldOut ? null : (
+            <div
+              className="pizza"
+              key={pizza.name}>
+              <img
+                src={pizza.photoName}
+                alt={pizza.name}
+              />
+              <div>
+                {' '}
+                <h3>{pizza.name}</h3>
+                <p>{pizza.ingredients}</p>
+                <span>£{pizza.price}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </ul>
     );
   }
